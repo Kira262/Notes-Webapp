@@ -1,0 +1,33 @@
+*,
+html,
+body,
+div {
+  font-family: "Fira Code", monospace;
+  font-size: 1.1rem;
+  z-index: 9999;
+}
+
+h5,
+h6 {
+  text-align: center;
+  color: white;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+li {
+  list-style: none;
+  font-style: normal;
+  font-size: 1em;
+  color: fuchsia;
+}
+
+/*# sourceMappingURL=style.css.map */
