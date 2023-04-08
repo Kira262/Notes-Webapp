@@ -27,7 +27,16 @@ li {
   list-style: none;
   font-style: normal;
   font-size: 1em;
-  color: fuchsia;
+  color: rgba(255, 0, 255, 0.7);
+}
+
+#preloader {
+  background: #fff url(/images/dotdotdot.gif) no-repeat center center;
+  background-size: 5%;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
 }
 
 /*# sourceMappingURL=style.css.map */
