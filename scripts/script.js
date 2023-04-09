@@ -47,9 +47,8 @@ function createNotesApp() {
     notesList.innerHTML = "";
     notes.forEach((note, index) => {
       const li = document.createElement("li");
-      li.innerHTML = `Note-${
-        index + 1
-      }:<br> <span class="note-text">${note}</span><br><br>`;
+      li.innerHTML = `Note-${index + 1
+        }:<br> <span class="note-text">${note}</span><br><br>`;
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
       deleteButton.classList.add("btn", "btn-outline-danger", "btn-sm", "ms-2");
