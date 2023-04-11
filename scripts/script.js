@@ -20,7 +20,7 @@ updateDate();
 
 setInterval(updateDate, 500);
 
-// Notes Functioning
+// Notes Functioning thing
 
 window.onload = function () {
   createNotesApp();
@@ -47,8 +47,9 @@ function createNotesApp() {
     notesList.innerHTML = "";
     notes.forEach((note, index) => {
       const li = document.createElement("li");
-      li.innerHTML = `Note-${index + 1
-        }:<br> <span class="note-text">${note}</span><br><br>`;
+      li.innerHTML = `Note-${
+        index + 1
+      }:<br> <span class="note-text">${note}</span><br><br>`;
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
       deleteButton.classList.add("btn", "btn-outline-danger", "btn-sm", "ms-2");
@@ -114,4 +115,36 @@ function createNotesApp() {
 var loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
+});
+
+// Weather App Thingy
+
+const form = document.querySelector("form");
+const input = document.querySelector("input");
+const weatherDiv = document.getElementById("weather");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const city = input.value.trim();
+
+  // Make API call
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c0ee70f6e6b307782e98c5d58a5453f7&units=metric`
+  )
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Update the HTML with the weather information
+      const temperature = data.main.temp;
+      const description = data.weather[0].description;
+      weatherDiv.innerHTML = `Temperature: ${temperature}&deg;C<br> Description: ${description}`;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      weatherDiv.innerHTML = "Unable to get weather information.";
+    });
 });
