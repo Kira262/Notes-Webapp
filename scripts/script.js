@@ -22,10 +22,6 @@ setInterval(updateDate, 500);
 
 // Notes Functioning thing
 
-window.onload = function () {
-  createNotesApp();
-};
-
 function createNotesApp() {
   const noteInput = document.getElementById("note-input");
   const addNoteButton = document.getElementById("add-note");
@@ -98,7 +94,6 @@ function createNotesApp() {
   }
 
   addNoteButton.addEventListener("click", function () {
-    console.log("Add Note button clicked!");
     addNote();
   });
 
@@ -110,6 +105,8 @@ function createNotesApp() {
 
   updateNotesList();
 }
+
+createNotesApp();
 
 // Preloader Thingy
 var loader = document.getElementById("preloader");
