@@ -1,7 +1,5 @@
-# Notes-Webapp
+# WeatherJot Webapp
 
-## Link To the app=>https://kira262.github.io/Notes-Webapp/index.html
+## Link To the app=><a href="https://kira262.github.io/WeatherJot/" target="_blank" rel="noopener noreferrer">WeatherJot Webapp</a>
 
-sass -w style.scss style.css
-
-<script src="https://kit.fontawesome.com/3472c536ee.js" crossorigin="anonymous"></script>
+<!--sass -w style.scss style.css-->
