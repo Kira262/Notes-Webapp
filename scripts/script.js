@@ -119,8 +119,6 @@ window.addEventListener("load", function () {
 
 // Weather App Thingy
 
-require("dotenv").config();
-
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const weatherDiv = document.getElementById("weather");
@@ -131,7 +129,7 @@ form.addEventListener("submit", (e) => {
 
   // Make API call
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c0ee70f6e6b307782e98c5d58a5453f7&units=metric`
   )
     .then((response) => {
       if (!response.ok) {
