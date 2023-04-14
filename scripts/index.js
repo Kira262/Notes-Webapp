@@ -96,7 +96,7 @@ function createNotesApp() {
 
   function editNoteAtIndex(index) {
     const noteText = notesList.querySelectorAll(".note-text")[index];
-    noteText.contentEditable = "true";
+    // noteText.contentEditable = "true";
     noteText.focus();
     noteText.addEventListener("blur", function (event) {
       const newNote = noteText.textContent.trim();
