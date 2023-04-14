@@ -1,7 +1,7 @@
 # Link To the app=><a href="https://kira262.github.io/WeatherJot/" target="_blank">WeatherJot Webapp</a>
 
 
-# 💫 About Me:
+## 💫 About Me:
 🔭 I’m currently working on:WeatherJot WebApp<br>🤝 I’m looking for help with :C#<br>🌱 I’m currently learning: React, C# , AzureAI
 
 
