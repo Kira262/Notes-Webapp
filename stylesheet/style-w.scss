@@ -8,7 +8,8 @@ div {
 }
 
 h5,
-h6,div {
+h6,
+div {
   text-align: center;
   color: white;
 }
@@ -40,6 +41,10 @@ li {
   position: fixed;
   z-index: 100;
 }
-.color{
-  color:#191919
+.color {
+  color: #191919;
+}
+input[type="text"]:focus {
+  border-color: rgb(0, 195, 255);
+  box-shadow: 0 0 0 0.25rem rgba(0, 195,255, 0.5);
 }

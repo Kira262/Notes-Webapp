@@ -38,7 +38,6 @@
           <div class="container-fluid">
             <a class="navbar-brand d-flex" href="index.html">
               <img
-                class="rounded-circle"
                 src="./images/Logo-1(transparent).png"
                 style="height: 80px; width: 80px"
               />
@@ -47,7 +46,7 @@
               <li class="nav-item">
                 <a
                   href="index.html"
-                  class="nav-link text-white text-uppercase fw-bolder"
+                  class="nav-link text-white text-uppercase fw-bolder focus-ring focus-ring-info"
                 >
                   Notes app
                 </a>
@@ -55,7 +54,9 @@
             </ul>
             <ul class="navbar-nav text-center d-flex">
               <li class="nav-item">
-                <a href="weather.html" class="nav-link text-white active"
+                <a
+                  href="weather.html"
+                  class="nav-link text-white active focus-ring focus-ring-info"
                   >Weather App</a
                 >
               </li>
@@ -67,7 +68,12 @@
       <section>
         <form>
           <label class="text-white" for="city">Enter City Name</label>
-          <input class="bg-transparent rounded color" type="text" id="city" name="city" />
+          <input
+            type="text"
+            id="city"
+            name="city"
+            class="bg-transparent rounded color text-capitalize"
+          />
           <button class="btn btn-outline-light" type="submit">
             Get Weather
           </button>
