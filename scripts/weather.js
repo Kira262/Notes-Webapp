@@ -48,7 +48,7 @@ form.addEventListener("submit", (e) => {
       // Update the HTML with the weather information
       const temperature = data.main.temp;
       const description = data.weather[0].description;
-      weatherDiv.innerHTML = `Temperature: ${temperature}&deg;C<br> Description: ${description}`;
+      weatherDiv.innerHTML = `Temperature: ${temperature} &deg;C<br> Weather: ${description}`;
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
