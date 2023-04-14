@@ -1,3 +1,8 @@
+// Preloader Thingy
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
 // Live Date Thing
 
 function updateDate() {
@@ -45,7 +50,7 @@ function createNotesApp() {
       const li = document.createElement("li");
       li.innerHTML = `Note-${
         index + 1
-      }:<br> <span class="note-text">${note}</span><br><br>`;
+      }:<br> <div class="note-text">${note}</div><br><br>`;
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
       deleteButton.classList.add("btn", "btn-outline-danger", "btn-sm", "ms-2");
@@ -71,21 +76,33 @@ function createNotesApp() {
     saveNotesToLocalStorage();
   }
 
+  // function editNoteAtIndex(index) {
+  //   const noteText = notesList.querySelectorAll(".note-text")[index];
+  //   const noteInput = document.createElement("input");
+  //   noteInput.type = "text";
+  //   noteInput.value = noteText.textContent;
+  //   noteInput.classList.add("note-input");
+  //   noteText.replaceWith(noteInput);
+  //   noteInput.focus();
+  //   noteInput.addEventListener("keyup", function (event) {
+  //     if (event.key === "Enter") {
+  //       const newNote = noteInput.value.trim();
+  //       notes[index] = newNote;
+  //       updateNotesList();
+  //       saveNotesToLocalStorage();
+  //     }
+  //   });
+  // }
+
   function editNoteAtIndex(index) {
     const noteText = notesList.querySelectorAll(".note-text")[index];
-    const noteInput = document.createElement("input");
-    noteInput.type = "text";
-    noteInput.value = noteText.textContent;
-    noteInput.classList.add("note-input");
-    noteText.replaceWith(noteInput);
-    noteInput.focus();
-    noteInput.addEventListener("keyup", function (event) {
-      if (event.key === "Enter") {
-        const newNote = noteInput.value.trim();
-        notes[index] = newNote;
-        updateNotesList();
-        saveNotesToLocalStorage();
-      }
+    noteText.contentEditable = "true";
+    noteText.focus();
+    noteText.addEventListener("blur", function (event) {
+      const newNote = noteText.textContent.trim();
+      notes[index] = newNote;
+      updateNotesList();
+      saveNotesToLocalStorage();
     });
   }
 
@@ -107,41 +124,3 @@ function createNotesApp() {
 }
 
 createNotesApp();
-
-// Preloader Thingy
-var loader = document.getElementById("preloader");
-window.addEventListener("load", function () {
-  loader.style.display = "none";
-});
-
-// Weather App Thingy
-
-const form = document.querySelector("form");
-const input = document.querySelector("input");
-const weatherDiv = document.getElementById("weather");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const city = input.value.trim();
-
-  // Make API call
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c0ee70f6e6b307782e98c5d58a5453f7&units=metric`
-  )
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Update the HTML with the weather information
-      const temperature = data.main.temp;
-      const description = data.weather[0].description;
-      weatherDiv.innerHTML = `Temperature: ${temperature}&deg;C<br> Description: ${description}`;
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-      weatherDiv.innerHTML = "Unable to get weather information.";
-    });
-});
