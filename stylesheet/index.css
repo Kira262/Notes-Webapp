@@ -1,0 +1,16 @@
+html,
+body {
+    font-family: "Fira Code", monospace;
+    font-size: 1.1rem;
+    background: url("https://rb.gy/fj86p") no-repeat;
+    background-size: cover;
+}
+
+#preloader {
+    background: #fff url(/images/dotdotdot.gif) no-repeat center center;
+    background-size: 5%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+}
