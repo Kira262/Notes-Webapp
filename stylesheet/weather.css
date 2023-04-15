@@ -1,10 +1,9 @@
-*,
 html,
-body,
-div {
+bod {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
-  z-index: 9999;
+  background: url("https://rb.gy/fj86p") no-repeat;
+  background-size: cover;
 }
 
 h5,
@@ -14,15 +13,6 @@ div {
   color: white;
 }
 
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
 
 li {
   list-style: none;
