@@ -48,18 +48,23 @@ function createNotesApp() {
     notesList.innerHTML = "";
     notes.forEach((note, index) => {
       const li = document.createElement("li");
-      li.innerHTML = `Note-${
-        index + 1
-      }:<br> <div class="note-text">${note}</div><br><br>`;
+      li.innerHTML = `Note-${index + 1}:
+      <br>
+      <div class="note-text">${note}</div><br><br>`;
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";
-      deleteButton.classList.add("btn", "btn-outline-danger", "btn-sm", "ms-2");
+      deleteButton.classList.add(
+        "btn",
+        "btn-outline-warning",
+        "btn-sm",
+        "ms-2"
+      );
       deleteButton.addEventListener("click", () => {
         deleteNoteAtIndex(index);
       });
       const editButton = document.createElement("button");
       editButton.textContent = "Edit";
-      editButton.classList.add("btn", "btn-outline-warning", "btn-sm", "ms-2");
+      editButton.classList.add("btn", "btn-outline-success", "btn-sm", "ms-2");
       editButton.addEventListener("click", () => {
         editNoteAtIndex(index);
       });
@@ -76,27 +81,9 @@ function createNotesApp() {
     saveNotesToLocalStorage();
   }
 
-  // function editNoteAtIndex(index) {
-  //   const noteText = notesList.querySelectorAll(".note-text")[index];
-  //   const noteInput = document.createElement("input");
-  //   noteInput.type = "text";
-  //   noteInput.value = noteText.textContent;
-  //   noteInput.classList.add("note-input");
-  //   noteText.replaceWith(noteInput);
-  //   noteInput.focus();
-  //   noteInput.addEventListener("keyup", function (event) {
-  //     if (event.key === "Enter") {
-  //       const newNote = noteInput.value.trim();
-  //       notes[index] = newNote;
-  //       updateNotesList();
-  //       saveNotesToLocalStorage();
-  //     }
-  //   });
-  // }
-
   function editNoteAtIndex(index) {
     const noteText = notesList.querySelectorAll(".note-text")[index];
-    // noteText.contentEditable = "true";
+    noteText.contentEditable = "true";
     noteText.focus();
     noteText.addEventListener("blur", function (event) {
       const newNote = noteText.textContent.trim();
