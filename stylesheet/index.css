@@ -1,9 +1,10 @@
 html,
 body {
     font-family: "Fira Code", monospace;
+    color:#fff;
     font-size: 1.1rem;
     background: url("https://rb.gy/fj86p") no-repeat;
-    background-size: cover;
+    background-size:cover;
 }
 
 #preloader {
