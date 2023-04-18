@@ -1,10 +1,10 @@
-html,
-body {
+html,body{
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
   color: white;
-  background: url("https://rb.gy/fj86p") no-repeat;
-  background-size: cover;
+  background: url("https://rb.gy/fj86p");
+  background-repeat:space;
+  background-size:cover;
 }
 
 h5,

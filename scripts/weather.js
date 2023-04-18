@@ -31,6 +31,7 @@ const input = document.querySelector("input");
 const weatherDiv = document.getElementById("weather");
 const apiKey = "c0ee70f6e6b307782e98c5d58a5453f7";
 
+// Fetch weather data for the entered city
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const city = input.value.trim();
@@ -49,15 +50,51 @@ form.addEventListener("submit", (e) => {
       // Update the HTML with the weather information
       const temperature = data.main.temp;
       const description = data.weather[0].description;
-      weatherDiv.innerHTML = `Temperature: ${temperature} &deg;C<br> Weather: ${description}`;
+      const humid = data.main.humidity;
+      const lat = data.coord.lat;
+      const long = data.coord.lon;
+      const max_temp = data.main.temp_max;
+      const min_temp = data.main.temp_min;
+      const feels = data.main.feels_like;
+      const speed = data.wind.speed;
+      const pressure = data.main.pressure;
+      if (max_temp === min_temp) {
+        weatherDiv.innerHTML = `
+        Temperature: ${temperature} &deg;C
+        <br>Feels like:${feels} &deg;C
+        <br>Description: ${description}
+        <br>// 
+        <br>Speed:${speed} m/s
+        <br>Humidity:${humid} %
+        <br>Pressure:${pressure} &#13169;
+        <br>// 
+        <br>Coordinates:
+        <br>Latitude:${lat}
+        <br>Longitude:${long}
+        `;
+      } else {
+        weatherDiv.innerHTML = `
+      Temperature: ${temperature} &deg;C
+      <br>Max Temperature:${max_temp} &deg;C
+      <br>Min Temperature:${min_temp} &deg;C
+      <br>Feels like:${feels} &deg;C
+      <br>// 
+      <br>Description: ${description}
+      <br>Speed:${speed} m/s
+      <br>Humidity:${humid} %
+      <br>Pressure:${pressure} &#13169;
+      <br>// 
+      <br>Coordinates:
+      <br>Latitude:${lat}
+      <br>Longitude:${long}
+      `;
+      }
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
       weatherDiv.innerHTML = "Unable to get weather information.";
     });
 });
-
-// Suggestion thing
 
 function suggestCitiesAndFetchWeather(input) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/find?q=${input}&type=like&sort=population&appid=${apiKey}`;
@@ -76,33 +113,6 @@ function suggestCitiesAndFetchWeather(input) {
       }
     })
     .catch((error) => console.log(error));
-
-  // Fetch weather data for the entered city
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const city = input.value.trim();
-
-    // Make API call
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // Update the HTML with the weather information
-        const temperature = data.main.temp;
-        const description = data.weather[0].description;
-        weatherDiv.innerHTML = `Temperature: ${temperature} &deg;C<br> Weather: ${description}`;
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-        weatherDiv.innerHTML = "Unable to get weather information.";
-      });
-  });
 
   // Add event listener for input changes
   input.addEventListener("input", () => {

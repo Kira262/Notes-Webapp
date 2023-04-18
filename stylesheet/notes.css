@@ -2,7 +2,8 @@ html,
 body {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
-  background: url("https://rb.gy/fj86p") no-repeat;
+  background: url("https://rb.gy/fj86p");
+  background-repeat: space;
   background-size: cover;
 }
 

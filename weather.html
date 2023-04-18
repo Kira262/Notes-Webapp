@@ -29,38 +29,38 @@
 
   <body>
     <div id="preloader"></div>
+    <section>
+      <nav class="navbar navbar-expand-lg text-wrap nav-underline">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex" href="index.html">
+            <img
+              src="./images/Logo-1(transparent).png"
+              style="height: 80px; width: 80px"
+            />
+          </a>
+          <ul class="navbar-nav text-center d-flex">
+            <li class="nav-item">
+              <a
+                href="notes.html"
+                class="nav-link text-white text-uppercase fw-bolder focus-ring focus-ring-info"
+              >
+                Notes app
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav text-center d-flex">
+            <li class="nav-item">
+              <a
+                href="weather.html"
+                class="nav-link text-white active focus-ring focus-ring-info"
+                >Weather App</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
     <main>
-      <section>
-        <nav class="navbar navbar-expand-lg text-wrap nav-underline">
-          <div class="container-fluid">
-            <a class="navbar-brand d-flex" href="index.html">
-              <img
-                src="./images/Logo-1(transparent).png"
-                style="height: 80px; width: 80px"
-              />
-            </a>
-            <ul class="navbar-nav text-center d-flex">
-              <li class="nav-item">
-                <a
-                  href="index.html"
-                  class="nav-link text-white text-uppercase fw-bolder focus-ring focus-ring-info"
-                >
-                  Notes app
-                </a>
-              </li>
-            </ul>
-            <ul class="navbar-nav text-center d-flex">
-              <li class="nav-item">
-                <a
-                  href="weather.html"
-                  class="nav-link text-white active focus-ring focus-ring-info"
-                  >Weather App</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </section>
       <h5 id="date"></h5>
       <section>
         <form>
@@ -75,7 +75,9 @@
             Get Weather
           </button>
         </form>
-        <div id="weather"></div>
+        <div id="weather">
+          
+        </div>
       </section>
     </main>
     <!-- Scipts -->
