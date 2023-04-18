@@ -58,37 +58,28 @@ form.addEventListener("submit", (e) => {
       const feels = data.main.feels_like;
       const speed = data.wind.speed;
       const pressure = data.main.pressure;
-      if (max_temp === min_temp) {
-        weatherDiv.innerHTML = `
-        Temperature: ${temperature} &deg;C
-        <br>Feels like:${feels} &deg;C
-        <br>Description: ${description}
-        <br>// 
-        <br>Speed:${speed} m/s
-        <br>Humidity:${humid} %
-        <br>Pressure:${pressure} &#13169;
-        <br>// 
-        <br>Coordinates:
-        <br>Latitude:${lat}
-        <br>Longitude:${long}
-        `;
-      } else {
-        weatherDiv.innerHTML = `
+      const oneDiv = document.getElementById("one");
+      const twoDiv = document.getElementById("two");
+      const threeDiv = document.getElementById("three");
+      oneDiv.innerHTML = `
+      <h5 class="text-decoration-underline">Temperature</h5><br>
       Temperature: ${temperature} &deg;C
       <br>Max Temperature:${max_temp} &deg;C
       <br>Min Temperature:${min_temp} &deg;C
       <br>Feels like:${feels} &deg;C
-      <br>// 
-      <br>Description: ${description}
-      <br>Speed:${speed} m/s
-      <br>Humidity:${humid} %
-      <br>Pressure:${pressure} &#13169;
-      <br>// 
-      <br>Coordinates:
+      `;
+      twoDiv.innerHTML = `
+      <h5 class="text-decoration-underline">Description</h5>
+       <br>Weather: ${description}
+       <br>Speed:${speed} m/s
+       <br>Humidity:${humid} %
+       <br>Pressure:${pressure} &#13169;
+      `;
+      threeDiv.innerHTML = `
+      <h5 class="text-decoration-underline">Coordinates:</h5>
       <br>Latitude:${lat}
       <br>Longitude:${long}
       `;
-      }
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
