@@ -2,8 +2,7 @@ html,
 body {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
-  background: url("https://rb.gy/fj86p");
-  background-repeat: space;
+  background: url("file:///E:/New%20folder/bg.jpg") no-repeat;
   background-size: cover;
 }
 

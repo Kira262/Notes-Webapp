@@ -3,8 +3,7 @@ body {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
   color: white;
-  background: url("file:///E:/%23Pograms/Git/WeatherJot/images/poster.png");
-  background-repeat: space;
+  background: url("https://raw.githubusercontent.com/Kira262/WeatherJot/main/images/poster.png") no-repeat;
   background-size: cover;
 }
 
