@@ -2,7 +2,7 @@ body {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
   color: white;
-  background-image: url("/images/poster.png");
+  background-image: url("https://raw.githubusercontent.com/Kira262/WeatherJot/main/images/poster.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
