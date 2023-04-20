@@ -1,10 +1,12 @@
 html,
 body {
     font-family: "Fira Code", monospace;
-    color:#fff;
+    color: #fff;
     font-size: 1.1rem;
-    background: url("https://rb.gy/fj86p") no-repeat;
-    background-size:cover;
+    background: linear-gradient(to top right,rgb(68, 68, 68),#191919);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 #preloader {
