@@ -2,7 +2,7 @@ html,
 body {
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
-  background-image: url("/images/bg.jpg");
+  background-image: url("/images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
