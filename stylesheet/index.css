@@ -3,11 +3,22 @@ body {
     font-family: "Fira Code", monospace;
     color: #fff;
     font-size: 1.1rem;
-    background: linear-gradient(to top right,rgb(68, 68, 68),#191919);
+    /* background: linear-gradient(to top right, rgb(68, 68, 68), #191919);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 
 }
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 
 #preloader {
     background: #fff url(/images/dotdotdot.gif) no-repeat center center;
