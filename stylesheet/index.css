@@ -1,11 +1,11 @@
+*,
 html,
 body {
-  font-family: "Fira Code", monospace;
-  color: #fff;
-  font-size: 1.1rem;
-  /* background: linear-gradient(to top right, rgb(68, 68, 68), #191919);
-    background-repeat: no-repeat;
-    background-size: cover; */
+  font-family: "Fira Code", sans-serif;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 video {
@@ -31,7 +31,7 @@ iframe {
 }
 
 #preloader {
-  background: #fff url(/images/dotdotdot.gif) no-repeat center center;
+  background: url(/images/dotdotdot.gif) no-repeat center center;
   background-size: 5%;
   height: 100vh;
   width: 100vw;
